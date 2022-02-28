@@ -1,0 +1,156 @@
+<!DOCTYPE html >
+<html lang="es">
+  <head> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="carlosArturoMT"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <meta name="author" content="carlosArturoMT"/>
+    <meta name="DC.creator" content="carlosArturoMT"/>
+    <meta name="copyright" content="carlosArturoMT"/>
+    <meta name="description" content="Correspondiente al curso práctico de JavaScript de Platzi"/>
+    <meta pproperty="og:site_name" content="JavaScript"/>
+    <meta property="og:title" content="Calcula Perímetros y Áreas."/>
+    <meta property="og:description" content="Correspondiente al curso práctico de JavaScript de Platzi"/>
+    <meta property="og:image" content="https://carlosarturomt.github.io/curso-practico-js/public/assets/imgs/figuras.jpg"/>
+    <meta property="og:image:url" content="https://carlosarturomt.github.io/curso-practico-js/public/assets/imgs/figuras.jpg"/>
+    <meta property="og:url" content="https://platzi.com"/>
+    <meta property="og:type" content="blog"/>
+    <meta itemprop="image" content="https://carlosarturomt.github.io/curso-practico-js/public/assets/imgs/figuras.jpg"/>
+    <meta name="twitter:image" content="https://carlosarturomt.github.io/curso-practico-js/public/assets/imgs/figuras.jpg"/>
+    <meta itemprop="image" content="https://carlosarturomt.github.io/curso-practico-js/public/assets/imgs/figuras.jpg"/>
+    <title>Calculadora de Perímetros y Áreas | WebMath</title>
+    <link rrel="image_src" href="https://carlosarturomt.github.io/curso-practico-js/public/assets/imgs/figuras.jpg"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com"/>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&amp;display=swap" rel="stylesheet"/>
+    <link rel="icon" type="image/png" href="https://static.platzi.com/media/achievements/badge3-practico-javascript-d081180f-b158-446b-a34e-e658111a3680.png"/>
+    <link rel="stylesheet" href="../sass/dist/styles.css"/>
+  </head>
+  <body> 
+    <header> 
+      <nav x-data="{ open: false }">
+        <div class="flex"><a href="../../index"> 
+            <p>WebMath</p></a></div>
+        <div class="equiv" @click="open = true">&equiv;</div>
+        <div class="toggle" x-show="open" @click.away="open = false">
+          <ul>
+            <li><a href="figuras.html">Geometría</a></li>
+            <li><a href="descuentos.html">Procentajes</a></li>
+            <li><a href="ProMedMod.html">Estadística</a></li>
+            <li><a href="salarios.html">Salario</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="container">
+      <h1>Figuras Geométricas</h1>
+      <p>Resultado del primer taller del curso práctico de JavaScript</p>
+      <section class="flex">
+        <article class="container__card color1">
+          <aside class="container__card--header"><img class="container__card--header-photo" src="../assets/icons/cuadrado.png" alt="cuadrado"/>
+            <hgroup> 
+              <h2>Cuadrado</h2>
+              <h3>Calcula el área y perímetro </h3>
+            </hgroup>
+          </aside>
+          <form class="container__card--cover" action="" name="formulCuadrado">
+            <label for="inputCuadrado">¿Cuánto mide cada lado de tu cuadrado?</label>
+            <input class="w-73" id="inputCuadrado" type="number"/>
+            <select class="w-25" name="unidadesCuadrado">
+              <option value="mm">mm</option>
+              <option value="cm">cm </option>
+              <option value="m">m </option>
+              <option value="km">km  </option>
+            </select>
+            <aside> 
+              <button type="button" onclick="calcularPerimetroCuadrado()">Calcular perímetro </button>
+              <button type="button" onclick="calcularAreaCuadrado()">Calcular área</button>
+              <p class="hidden w-100" id="resultCuadrado"></p>
+            </aside>
+          </form>
+        </article>
+        <article class="container__card color3">
+          <aside class="container__card--header"><img class="container__card--header-photo" src="../assets/icons/circulo.png" alt="circulo"/>
+            <hgroup> 
+              <h2>Circulo</h2>
+              <h3>Calcula el área y perímetro</h3>
+            </hgroup>
+          </aside>
+          <form class="container__card--cover" action="" name="formulCirculo">
+            <label for="inputCirculo">¿Cuánto mide el radio de tu circulo?</label>
+            <input class="w-73" id="inputCirculo" type="number"/>
+            <select class="w-25" name="unidadesCirculo">
+              <option value="mm">mm</option>
+              <option value="cm">cm </option>
+              <option value="m">m </option>
+              <option value="km">km  </option>
+            </select>
+            <aside> 
+              <button type="button" onclick="calcularPerimetroCirculo()">Calcular circunferencia </button>
+              <button type="button" onclick="calcularAreaCirculo()">Calcular área</button>
+              <p class="hidden w-100" id="resultCirculo"></p>
+            </aside>
+          </form>
+        </article>
+        <article class="container__card color4">
+          <aside class="container__card--header"><img class="container__card--header-photo" src="../assets/icons/rectangulo.png" alt="cuadrado"/>
+            <hgroup> 
+              <h2>Rectángulo</h2>
+              <h3>Calcula el área y perímetro</h3>
+            </hgroup>
+          </aside>
+          <form class="container__card--cover" action="" name="formulRectangulo">
+            <label for="inputRectangulo">¿Cuánto mide cada lado de tu rectángulo?</label>
+            <input class="w-50" id="inputRectanguloA" type="number" placeholder="Altura"/>
+            <input class="w-50" id="inputRectanguloB" type="number" placeholder="Base"/>
+            <select class="w-100" name="unidadesRectangulo">
+              <option value="mm">mm</option>
+              <option value="cm">cm </option>
+              <option value="m">m </option>
+              <option value="km">km  </option>
+            </select>
+            <aside> 
+              <button type="button" onclick="calcularPerimetroRectangulo()">Calcular perímetro </button>
+              <button type="button" onclick="calcularAreaRectangulo()">Calcular área</button>
+              <p class="hidden w-100" id="resultRectangulo"></p>
+            </aside>
+          </form>
+        </article>
+        <article class="container__card color2">
+          <aside class="container__card--header"><img class="container__card--header-photo" src="../assets/icons/triangulo.png" alt="triangulo"/>
+            <hgroup> 
+              <h2>Triángulo</h2>
+              <h3>Calcula el área y perímetro</h3>
+            </hgroup>
+          </aside>
+          <form class="container__card--cover" action="" name="formulTriangulo">
+            <label for="inputTriangulo">¿Cuánto mide cada lado de tu triángulo?</label>
+            <input class="w-50" id="inputTrianguloA" type="number" placeholder="Lado A"/>
+            <input class="w-50" id="inputTrianguloB" type="number" placeholder="Lado B"/>
+            <input class="w-50" id="inputTrianguloC" type="number" placeholder="Base"/>
+            <input class="w-50" id="inputTrianguloD" type="number" placeholder="Altura"/>
+            <select class="w-100" name="unidadesTriangulo">
+              <option value="mm">mm</option>
+              <option value="cm">cm </option>
+              <option value="m">m </option>
+              <option value="km">km  </option>
+            </select>
+            <aside> 
+              <button type="button" onclick="calcularPerimetroTriangulo()">Calcular perímetro </button>
+              <button type="button" onclick="calcularAreaTriangulo()">Calcular área   </button>
+              <p class="hidden w-100" id="resultTriangulo"></p>
+            </aside>
+          </form>
+        </article>
+      </section>
+    </main>
+  </body>
+  <script src="../js/figuras_funciones.js"></script>
+  <footer>
+    <article> 
+      <h5><span>&copy</span><span>2021</span><a href="https://platzi.com/clases/javascript-practico/" target="_blank" rel="noopener"> <span>CursoPraćticoJS</span></a></h5>
+      <p>Desarrollo por<a href="https://github.com/carlosarturomt"> CarlosArturoMT</a></p>
+    </article>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
+</html>

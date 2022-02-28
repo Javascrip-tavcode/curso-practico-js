@@ -1,0 +1,358 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html main {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  font-family: "Ubuntu", sans-serif;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  overflow: scroll;
+  overflow-x: hidden;
+  transition: 0.9s ease all;
+  background: #ececec;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  font-weight: 500;
+  color: #222222;
+}
+
+input:focus {
+  outline: none;
+}
+
+header {
+  margin-bottom: 1rem;
+  height: 60px;
+}
+header img {
+  width: 2rem;
+  margin-right: 5px;
+}
+header a p {
+  color: #226a73;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+header a,
+header nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header ul li {
+  font-size: 1.2rem;
+}
+header ul li a {
+  color: white;
+}
+header ul li a:hover {
+  text-decoration: underline;
+}
+header nav {
+  padding: 0 3%;
+  background-color: #019a679a;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.equiv {
+  font-size: 3rem;
+  color: #226a73;
+}
+.equiv:hover {
+  cursor: pointer;
+  color: #00090a;
+}
+
+.toggle {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  padding: 3%;
+  border-radius: 5px;
+  line-height: 2rem;
+  background-color: #226a73;
+}
+
+.container {
+  width: 100%;
+}
+.container .flex {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.container .color1 {
+  background-color: #019a679a;
+}
+.container .color2 {
+  background-color: rgba(151, 5, 5, 0.664);
+}
+.container .color3 {
+  background-color: rgba(104, 104, 199, 0.801);
+}
+.container .color4 {
+  background-color: rgba(201, 117, 21, 0.801);
+}
+.container .w-25 {
+  width: 25%;
+}
+.container .w-50 {
+  width: 49%;
+  display: inline-block;
+}
+.container .w-73 {
+  width: 73%;
+}
+.container .w-100 {
+  width: 100%;
+}
+.container__card {
+  width: 90%;
+  margin: 5%;
+  max-width: 450px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 10px 1px gray;
+  padding: 0px;
+  color: #FEFEFE;
+}
+.container__card footer {
+  background-color: transparent;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  padding: 3%;
+  justify-content: center;
+  align-items: center;
+}
+.container__card footer a {
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+.container__card footer a:hover {
+  color: greenyellow;
+}
+.container__card p {
+  padding: 3%;
+  font-size: 1rem;
+}
+.container__card--header {
+  display: flex;
+  padding: 2.5px;
+}
+.container__card--header-photo {
+  margin: 5px;
+  width: 45px;
+  height: 45px;
+}
+.container__card--header hgroup {
+  padding: 3%;
+}
+.container__card--header hgroup h2 {
+  text-transform: uppercase;
+  font-size: 1.3rem;
+}
+.container__card--header hgroup h3 {
+  font-size: 0.9rem;
+}
+.container__card--cover {
+  width: 90%;
+  height: auto;
+  margin: 0 5%;
+  padding-bottom: 5%;
+  font-size: 1.1rem;
+}
+.container__card--cover label {
+  font-size: 1.1rem;
+  display: block;
+}
+.container__card--cover input {
+  border-radius: 5px;
+  background-color: rgba(34, 106, 115, 0.23);
+  border: none;
+  margin: 3% 0;
+  padding: 3%;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #FEFEFE;
+}
+.container__card--cover input::placeholder {
+  font-weight: normal;
+  color: rgba(255, 255, 255, 0.5);
+}
+.container__card--cover input:focus {
+  background-color: rgba(10, 10, 10, 0.185);
+}
+.container__card--cover select {
+  border-radius: 5px;
+  background-color: rgba(34, 106, 115, 0.23);
+  border: none;
+  margin: 3% 0;
+  padding: 3%;
+  font-size: 1.1rem;
+  font-weight: bold;
+  outline: none;
+  color: #FEFEFE;
+}
+.container__card--cover select:focus {
+  background-color: rgba(10, 10, 10, 0.493);
+}
+.container__card--cover button {
+  margin: 1%;
+  padding: 3%;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 10px;
+  background-color: #FEFEFE;
+  color: #226a73;
+}
+.container__card--cover button:hover {
+  background-color: rgba(10, 10, 10, 0.185);
+  color: #FEFEFE;
+}
+.container__card--cover p {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.container__card--cover img {
+  width: 60%;
+  margin: 0 20%;
+}
+
+@media screen and (min-width: 600px) {
+  .container__card {
+    width: 45%;
+    margin: 2.5%;
+  }
+}
+@media screen and (min-width: 900px) {
+  .container .flex {
+    width: 90%;
+    margin: 0 5%;
+  }
+  .container__card {
+    width: 30%;
+    margin: 1%;
+  }
+}
+footer {
+  width: 100%;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #FEFEFE;
+  background-color: #019a679a;
+  padding: 3% 0;
+}
+footer a {
+  color: #FEFEFE;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+
+@media screen and (min-width: 600px) {
+  footer {
+    padding: 1% 0;
+  }
+}
+.show {
+  text-align: center;
+  display: inherit !important;
+  margin-top: 1rem;
+  border-radius: 10px;
+  border: rgba(10, 10, 10, 0.493) solid 3px;
+}
+
+.normal {
+  background-color: transparent;
+}
+
+.careful {
+  background-color: orange;
+  color: white;
+}
+
+.danger {
+  background-color: red;
+  color: white;
+}
+
+.hidden {
+  display: none;
+}
+
+.garbage {
+  margin-left: 3px;
+  margin-bottom: -5px;
+  display: inline-flex;
+  width: 20px;
+  height: 20px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(../../assets/icons/bin.png);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.container h1 {
+  font-size: 1.8rem;
+  width: 90%;
+  margin: 0 auto;
+}
+.container > p {
+  width: 90%;
+  margin: 0 auto;
+  font-size: 1.2rem;
+}
+.container__inf {
+  width: 100%;
+  margin: 5%;
+}
+.container__inf h2 {
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 3px 0px 5px #019a679a;
+  font-size: 1.8rem;
+}
+.container__inf p {
+  margin: 1rem 0;
+  font-size: 1rem;
+}
+.container__inf img {
+  width: 100%;
+}
+.container__inf a {
+  text-shadow: 3px 0px 5px #019a679a;
+}
+.container__inf a:hover {
+  text-decoration: underline;
+}
+
+@media screen and (min-width: 900px) {
+  .container__inf img {
+    width: 60%;
+    margin: 0 20%;
+  }
+}
